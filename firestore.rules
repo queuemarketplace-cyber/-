@@ -1,0 +1,28 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isValidLead(data) {
+      return data.keys().hasAll(['fullName', 'phoneNumber', 'createdAt']) &&
+             data.fullName is string && data.fullName.size() > 0 &&
+             data.phoneNumber is string && data.phoneNumber.size() >= 9;
+    }
+
+    function isValidClick(data) {
+      return data.keys().hasAll(['source', 'timestamp']) &&
+             data.source is string && data.timestamp is string;
+    }
+
+    match /agent_leads/{leadId} {
+      allow create: if isValidLead(request.resource.data);
+      allow read: if true;
+      allow update, delete: if false;
+    }
+
+    match /click_events/{eventId} {
+      allow create: if isValidClick(request.resource.data);
+      allow read: if true;
+      allow update, delete: if false;
+    }
+  }
+}

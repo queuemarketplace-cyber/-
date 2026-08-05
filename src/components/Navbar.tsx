@@ -1,12 +1,13 @@
 import React from 'react';
 import { APPLICATION_URL } from '../data/qhubData';
-import { ArrowUpRight, Sparkles, Phone } from 'lucide-react';
+import { logClickEvent } from '../lib/firebase';
+import { ArrowUpRight, Sparkles, Phone, UserCheck } from 'lucide-react';
 
 interface NavbarProps {
   onOpenApplyModal?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = () => {
+export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-white/90 border-b border-slate-200/80 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
@@ -38,7 +39,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
         </div>
 
         {/* Desktop Quick Nav Links */}
-        <nav className="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
           <a href="#work-model" className="hover:text-blue-600 transition-colors">
             รูปแบบการรับงาน
           </a>
@@ -47,6 +48,10 @@ export const Navbar: React.FC<NavbarProps> = () => {
           </a>
           <a href="#benefits" className="hover:text-blue-600 transition-colors">
             สิทธิประโยชน์
+          </a>
+          <a href="#register-lead" className="hover:text-blue-600 transition-colors flex items-center gap-1 font-semibold text-blue-700">
+            <UserCheck className="w-3.5 h-3.5" />
+            <span>ลงทะเบียนด่วน</span>
           </a>
           <a href="#launch-contact" className="hover:text-blue-600 transition-colors">
             กำหนดการ & ติดต่อ
@@ -70,6 +75,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
             href={APPLICATION_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => logClickEvent('navbar_apply_button')}
             className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg shadow-blue-500/20 active:scale-[0.98] transition-all"
           >
             <Sparkles className="w-4 h-4 text-cyan-200 animate-pulse" />

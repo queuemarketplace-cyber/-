@@ -1,6 +1,7 @@
 import React from 'react';
 import { APPLICATION_URL } from '../data/qhubData';
-import { Sparkles, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { logClickEvent } from '../lib/firebase';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 export const StickyCtaBar: React.FC = () => {
   return (
@@ -28,6 +29,7 @@ export const StickyCtaBar: React.FC = () => {
             href={APPLICATION_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => logClickEvent('sticky_bar_apply_button')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white font-bold text-sm shadow-lg shadow-blue-500/25 active:scale-98 transition-all group"
           >
             <Sparkles className="w-4 h-4 text-cyan-200 animate-pulse" />

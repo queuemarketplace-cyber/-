@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { APPLICATION_URL } from '../data/qhubData';
+import { logClickEvent } from '../lib/firebase';
 import { Sparkles, ArrowRight, CheckCircle2, Shield, Calendar, Award } from 'lucide-react';
 
 export const HeroSection: React.FC = () => {
@@ -70,6 +71,7 @@ export const HeroSection: React.FC = () => {
             href={APPLICATION_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => logClickEvent('hero_apply_button')}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-indigo-600 to-cyan-600 hover:from-blue-700 hover:via-indigo-700 hover:to-cyan-700 text-white font-bold text-base sm:text-lg shadow-xl shadow-blue-500/25 hover:shadow-2xl hover:shadow-blue-500/35 active:scale-[0.98] transition-all group"
           >
             <span>สนใจสมัคร Agent รุ่นแรก</span>
@@ -77,10 +79,10 @@ export const HeroSection: React.FC = () => {
           </a>
 
           <a
-            href="#work-model"
+            href="#register-lead"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-2xl bg-white hover:bg-slate-100 text-slate-700 font-semibold text-base border border-slate-200 shadow-xs transition-colors"
           >
-            อ่านเกณฑ์การรับงาน
+            ลงทะเบียนด่วน
           </a>
         </motion.div>
 

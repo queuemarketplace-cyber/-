@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { FOUNDING_BENEFITS, APPLICATION_URL } from '../data/qhubData';
+import { logClickEvent } from '../lib/firebase';
 import {
   CheckCircle2,
   Sparkles,
@@ -112,6 +113,7 @@ export const BenefitsSection: React.FC = () => {
             href={APPLICATION_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => logClickEvent('benefits_section_apply_button')}
             className="shrink-0 px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-blue-700 font-bold text-sm shadow-md hover:shadow-lg active:scale-95 transition-all flex items-center gap-2"
           >
             <span>ลงทะเบียนสมัครตอนนี้</span>

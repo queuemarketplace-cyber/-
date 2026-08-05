@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "agent_leads": {
+      "title": "Agent Lead Submissions",
+      "description": "Records of potential agents expressing interest or leaving contact information",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string", "description": "Full name of the applicant" },
+        "phoneNumber": { "type": "string", "description": "Phone number" },
+        "lineId": { "type": "string", "description": "Line ID or preferred contact" },
+        "experience": { "type": "string", "description": "Brief experience or field of interest" },
+        "status": { "type": "string", "enum": ["pending", "contacted", "enrolled"], "description": "Lead status" },
+        "createdAt": { "type": "string", "format": "date-time", "description": "Timestamp when lead was submitted" }
+      },
+      "required": ["fullName", "phoneNumber", "createdAt"]
+    },
+    "click_events": {
+      "title": "Click Events",
+      "description": "Logs when a user clicks the apply link",
+      "type": "object",
+      "properties": {
+        "source": { "type": "string", "description": "Where the click originated (e.g., hero, navbar, sticky_bar)" },
+        "timestamp": { "type": "string", "format": "date-time", "description": "Time of click" }
+      },
+      "required": ["source", "timestamp"]
+    }
+  }
+}
