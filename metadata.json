@@ -1,0 +1,6 @@
+{
+  "name": "QHub Agent - สมัคร Founding Agent",
+  "description": "เว็บไซต์รายละเอียดเกณฑ์การสมัคร QHub Founding Agent (รุ่นแรก) พร้อมลิงก์สมัครงาน",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
