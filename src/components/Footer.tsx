@@ -89,8 +89,11 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 border-t border-slate-800/80 mt-6">
           <p>© {new Date().getFullYear()} QHub Platform. All rights reserved.</p>
+          <p className="text-slate-400 font-medium">
+            * บริษัทขอสงวนสิทธิ์ในการปรับเปลี่ยนเงื่อนไขโดยไม่ต้องแจ้งให้ทราบล่วงหน้า
+          </p>
           <p className="text-slate-500">
             เปิดให้บริการเต็มรูปแบบ เดือน กันยายน 2569
           </p>

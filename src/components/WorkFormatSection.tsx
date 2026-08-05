@@ -108,6 +108,9 @@ export const WorkFormatSection: React.FC = () => {
           <div className="text-sm sm:text-base leading-relaxed">
             <span className="font-bold block text-amber-950 mb-1">หมายเหตุสำคัญเกี่ยวกับการรับงาน:</span>
             จำนวนงานที่ได้รับขึ้นอยู่กับความต้องการของลูกค้าในแต่ละพื้นที่และช่วงเวลา แพลตฟอร์มจึงไม่สามารถรับประกันจำนวนงานหรือรายได้ที่แน่นอนได้ แต่จะพยายามกระจายโอกาสอย่างทั่วถึง
+            <div className="mt-2 text-xs font-semibold text-amber-800 border-t border-amber-200/80 pt-2">
+              * บริษัทขอสงวนสิทธิ์ในการปรับเปลี่ยนเงื่อนไขโดยไม่ต้องแจ้งให้ทราบล่วงหน้า
+            </div>
           </div>
         </motion.div>
       </div>

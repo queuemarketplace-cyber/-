@@ -181,6 +181,11 @@ export const RevenueSection: React.FC = () => {
 
         {/* Interactive Earnings Calculator Component */}
         <EarningsCalculator />
+
+        {/* Disclaimer Note */}
+        <p className="mt-6 text-center text-xs text-slate-500 font-medium">
+          * บริษัทขอสงวนสิทธิ์ในการปรับเปลี่ยนเงื่อนไข สัดส่วนรายได้ และเกณฑ์บริการโดยไม่ต้องแจ้งให้ทราบล่วงหน้า
+        </p>
       </div>
     </section>
   );
